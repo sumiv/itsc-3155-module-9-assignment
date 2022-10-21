@@ -6,4 +6,28 @@
 <h1 class="mb-5">Search Movie Ratings</h1>
 <p class="mb-3">Search for a movie rating below</p>
 <!-- TODO: Feature 3 -->
+
+<!--make a form that take user input as string -->
+<form action="/movies/search" method="get">
+    <label for="title">Enter movie title</label>
+    <input type="text" name="title" id="title" placeholder="Search.." required>
+    <br>
+    <button type="submit">submit</button>
+</form> 
+<!--title, this is the logic-->
+<!-- List of all movies is movie_repository-->
+
+<!--get the name from the form-->
+
+{% if hold == None %}
+<br>
+    <h2>Enter in a valid movie</h2>
+ {% else %}
+    <h2> {{movie.title}}</h2>
+    <p> By {{movie.director}}</p>
+    <p> With a rating of {{movie.rating}} </p>
+
+{% endif %}
+<!--call function that gets the movie bassed off title   get_movie_by_title(self, title: str)-->
+
 {% endblock %}
