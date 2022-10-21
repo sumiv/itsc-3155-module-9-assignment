@@ -22,11 +22,14 @@ def list_all_movies():
 def create_movies_form():
     return render_template('create_movies_form.html', create_rating_active=True)
 
-
 @app.post('/movies')
 def create_movie():
     # TODO: Feature 2
     # After creating the movie in the database, we redirect to the list all movies page
+    title = request.form.get('title')
+    director = request.form.get('director')
+    rating = request.form.get('rating')
+    movie_repository.create_movie(title, director, rating)
     return redirect('/movies')
 
 
