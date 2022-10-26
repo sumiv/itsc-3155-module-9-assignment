@@ -27,5 +27,5 @@ def test_get_all_movies_not_in_List():
     response = testing_app.get('/movies')
     #check that the title is different 
     assert not b'<td>The Last Sith</td>' in response.data
-    assert b'<td>Rian Johnson</td>' in response.data
-    assert b'<td>3</td>' in response.data
+    assert not b'<td>Ryan Johns0n</td>' in response.data
+    assert not b'<td>5</td>' in response.data
